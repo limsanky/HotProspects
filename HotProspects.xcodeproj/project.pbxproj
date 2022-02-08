@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				9623678927B254DC001FB8DA /* HotProspectsApp.swift */,
-				9623678B27B254DC001FB8DA /* ContentView.swift */,
 				9623679B27B26F53001FB8DA /* Prospect.swift */,
+				9623678B27B254DC001FB8DA /* ContentView.swift */,
 				9623679727B26D45001FB8DA /* ProspectsView.swift */,
 				9623679927B26D4B001FB8DA /* MeView.swift */,
 				9623678D27B254DD001FB8DA /* Assets.xcassets */,
