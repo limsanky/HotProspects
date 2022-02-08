@@ -16,6 +16,7 @@
 		9623679C27B26F53001FB8DA /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9623679B27B26F53001FB8DA /* Prospect.swift */; };
 		9623679F27B27817001FB8DA /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9623679E27B27817001FB8DA /* CodeScanner */; };
 		962367A127B28F3E001FB8DA /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962367A027B28F3E001FB8DA /* ImageSaver.swift */; };
+		962367A327B2B4E9001FB8DA /* FileManager-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962367A227B2B4E9001FB8DA /* FileManager-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9623679927B26D4B001FB8DA /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		9623679B27B26F53001FB8DA /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		962367A027B28F3E001FB8DA /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		962367A227B2B4E9001FB8DA /* FileManager-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9623678B27B254DC001FB8DA /* ContentView.swift */,
 				9623679727B26D45001FB8DA /* ProspectsView.swift */,
 				9623679927B26D4B001FB8DA /* MeView.swift */,
+				962367A227B2B4E9001FB8DA /* FileManager-Extension.swift */,
 				9623678D27B254DD001FB8DA /* Assets.xcassets */,
 				9623678F27B254DD001FB8DA /* Preview Content */,
 				962367A027B28F3E001FB8DA /* ImageSaver.swift */,
@@ -161,6 +164,7 @@
 				962367A127B28F3E001FB8DA /* ImageSaver.swift in Sources */,
 				9623679C27B26F53001FB8DA /* Prospect.swift in Sources */,
 				9623679827B26D45001FB8DA /* ProspectsView.swift in Sources */,
+				962367A327B2B4E9001FB8DA /* FileManager-Extension.swift in Sources */,
 				9623678C27B254DC001FB8DA /* ContentView.swift in Sources */,
 				9623678A27B254DC001FB8DA /* HotProspectsApp.swift in Sources */,
 			);
