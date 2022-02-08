@@ -16,6 +16,7 @@ struct ProspectsView: View {
     
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var sortByName = false
     
     let filter: FilterType
     
@@ -40,14 +41,18 @@ struct ProspectsView: View {
                     .swipeActions {
                         if prospect.isContacted {
                             Button {
-                                prospects.toggle(prospect)
+                                withAnimation {
+                                    prospects.toggle(prospect)
+                                }
                             } label: {
                                 Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
                             }
                             .tint(.blue)
                         } else {
                             Button {
-                                prospects.toggle(prospect)
+                                withAnimation {
+                                    prospects.toggle(prospect)
+                                }
                             } label: {
                                 Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
                             }
@@ -65,10 +70,23 @@ struct ProspectsView: View {
             }
             .navigationTitle(title)
             .toolbar {
-                Button {
-                    isShowingScanner = true
-                } label: {
-                    Label("Scan", systemImage: "qrcode.viewfinder")
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        sortByName.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.down.circle")
+                            Text(sortByName ? "Name" : "Chronology")
+                        }
+                        .font(.subheadline)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingScanner = true
+                    } label: {
+                        Label("Scan", systemImage: "qrcode.viewfinder")
+                    }
                 }
             }
             .sheet(isPresented: $isShowingScanner) {
@@ -91,11 +109,11 @@ struct ProspectsView: View {
     var filteredProspects: [Prospect] {
         switch filter {
         case .none:
-            return prospects.people
+            return prospects.people.sorted { sortByName ? $0.name < $1.name : true }
         case .contacted:
-            return prospects.people.filter { $0.isContacted }
+            return prospects.people.filter { $0.isContacted }.sorted { sortByName ? $0.name < $1.name : true }
         case .uncontacted:
-            return prospects.people.filter { !$0.isContacted }
+            return prospects.people.filter { !$0.isContacted }.sorted { sortByName ? $0.name < $1.name : true }
         }
     }
     
