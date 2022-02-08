@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct HotProspectsApp: App {
+    @StateObject private var prospects = Prospects()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(prospects: prospects)
         }
     }
 }

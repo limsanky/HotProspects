@@ -12,12 +12,24 @@ struct ProspectsView: View {
         case none, contacted, uncontacted
     }
     
+    @EnvironmentObject var prospects: Prospects
+    
     let filter: FilterType
     
     var body: some View {
         NavigationView {
-            Text("Hello View")
+            Text("People: \(prospects.people.count)")
                 .navigationTitle(title)
+                .toolbar {
+                    Button {
+                        let prospect = Prospect()
+                        prospect.name = "Sankarshana V"
+                        prospect.emailAddress = "sanky@yonsei.com"
+                        prospects.people.append(prospect)
+                    } label: {
+                        Label("Scan", systemImage: "qrcode.viewfinder")
+                    }
+                }
         }
     }
     
